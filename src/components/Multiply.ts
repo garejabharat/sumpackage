@@ -3,7 +3,7 @@
  * 
  * @param [a] - first input to multiply
  * @param [b] - second input to multiply
- * @returns multiply of a and b
+ * @returns multiply of frist and second params
  */
 
 export default function Multiply(a:number,b:number){
