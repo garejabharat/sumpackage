@@ -13,10 +13,10 @@ phases:
       - npm run build     
   build:
     commands:
-        # run build script
-        - npm run build
-        - npm pack 
-        - echo Build started on `date`
+      # run build script
+      - npm run build
+      - npm pack 
+      - echo Build started on `date`
   post_build:
     commands:
       - echo Build completed on `date`  
@@ -26,4 +26,3 @@ artifacts:
   files:
     - 'dist/**/*'
     - '*.tgz' 
- base-directory: 'dist'
