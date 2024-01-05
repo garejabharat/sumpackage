@@ -1,26 +1,28 @@
 version: 0.2
 
 phases:
-  install:
+ install:
     runtime-versions:
       nodejs: 20
     commands:
-        # install npm
-        - npm install
-        - npm install -g typescript
-        
-  build:
+      - echo "Installing project dependencies..."
+      - npm install
+      - echo "Installing TypeScript compiler globally..."
+      - npm install -g typescript
+
+ build:
     commands:
-      # run build script
-      - npm run build  
-      - npm pack 
-      - echo Build started on `date`
-  post_build:
+      - echo "Building project..."
+      - npm run build
+      - npm pack
+      - echo "Build started on `date`"
+
+ post_build:
     commands:
-      - echo Build completed on `date`  
+      - echo "Build completed on `date`"
+
 artifacts:
-  # include all files required to run application
-  # notably excluded is node_modules, as this will cause overwrite error on deploy
-  files:
+ files:
     - 'dist/**/*'
     - '*.tgz' 
+ base-directory: dist
