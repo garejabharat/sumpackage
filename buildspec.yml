@@ -5,8 +5,6 @@ phases:
     commands:
       - echo "Installing project dependencies..."
       - npm install
-      - echo "Installing TypeScript compiler globally..."
-      - npm install -g typescript
 
  build:
     commands:
@@ -14,13 +12,7 @@ phases:
       - npm run build
       - npm pack
       - echo "Build started on `date`"
-
- post_build:
-    commands:
-      - echo "Build completed on `date`"
-
 artifacts:
  files:
     - 'dist/**/*'
     - '*.tgz' 
- base-directory: dist
