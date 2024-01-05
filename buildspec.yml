@@ -5,6 +5,7 @@ phases:
     commands:
         # install npm
         - npm install
+        - npm install -g typescript
        
   build:
     commands:
