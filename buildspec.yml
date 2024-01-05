@@ -8,12 +8,11 @@ phases:
         # install npm
         - npm install
         - npm install -g typescript
-  pre_build:
-    commands:
-      - npm run build     
+        
   build:
     commands:
       # run build script
+      - npm run build  
       - npm pack 
       - echo Build started on `date`
   post_build:
