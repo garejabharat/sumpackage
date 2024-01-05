@@ -1,21 +1,23 @@
 version: 0.2
 
 phases:
- install:
-   runtime-versions:
-      nodejs: 18
-    commands:
-      - echo "Installing project dependencies..."
-      - npm install
-      - npm install --save-dev typescript    
+   install:
+      runtime-versions:
+         nodejs: 18
+      commands:
+         - echo "Installing project dependencies..."
+         - npm install
+         - npm install -g typescript
 
- build:
-    commands:
-      - echo "Building project..."
-      - ./node_modules/.bin/tsc
-      - npm pack
-      - echo "Build started on `date`"
+   build:
+      commands:
+         - echo "Building project..."
+         - npm run build
+         - npm pack
+         - echo "Build started on `date`"
 artifacts:
- files:
-    - 'dist/**/*'
-    - '*.tgz' 
+   files:
+      - package.json
+      - package-lock.json
+      - 'dist/**/*'
+      - '*.tgz' 
