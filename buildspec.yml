@@ -10,7 +10,6 @@ phases:
  build:
     commands:
       - echo "Building project..."
-      - npm run build
       - ./node_modules/.bin/tsc  # Use the locally installed TypeScript binary
       - npm pack
       - echo "Build started on `date`"
