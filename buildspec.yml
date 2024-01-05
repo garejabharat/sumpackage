@@ -5,6 +5,7 @@ phases:
     commands:
       - echo "Installing project dependencies..."
       - npm install
+      - npm install --save-dev typescript    
 
  build:
     commands:
