@@ -9,3 +9,6 @@
 export default function Multiply(a:number,b:number){
     return a * b;
 }
+export function Addition(a:number,b:number){
+    return a + b;
+}
